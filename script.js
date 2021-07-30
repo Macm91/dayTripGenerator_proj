@@ -40,20 +40,15 @@ function locationrestaurantoptions (theLocation){
 let arrWhichRestList = locationrestaurantoptions (randomLocation);
 console.log (arrWhichRestList);
 
-//arrays of location restaurants 
-let arrFishkillRestaurants = ["Satano", "Jade China", "The Dutchess Biercafe"];
-let arrMonroeRestaurants = ["La Vera Cucina", "Scalia & Co Craft Kitchen& Bar","Mina's Spanish Kitchen"];
-let arrNycRestaurants = ["The Modern", "Frevo", "Farra"];
-let arrPrinctonRestaurants = ["Hoagie Haven", "Elements", "Thai Garden"];
 
-// function randomizerRestaurant(location){
-//     let decimalNum = Math.random()*location.length;
-//     let wholeNum=Math.floor(decimalNum);
-//     return location[wholeNum];
-// }
+function randomizerRestaurant(location){
+    let decimalNum = Math.random()*location.length;
+    let wholeNum=Math.floor(decimalNum);
+    return location[wholeNum];
+}
 
 
 
-// let randomRestaurant = randomizerRestaurant (randomLocation);
-// console.log (randomRestaurant);
+let randomRestaurant = randomizerRestaurant (arrWhichRestList);
+console.log (randomRestaurant);
 
