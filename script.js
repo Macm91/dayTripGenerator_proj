@@ -63,5 +63,36 @@ console.log (resultRandomTransportation);
 
 //Entertainment 
 
-// let arrEntNYC = ["broadway", "bar crawl", "central park", " carraige ride"];
-// let 
+function locationEntertainment (location){
+    location = randomLocation
+    let arrEntNYC = ["broadway", "bar crawl", "central park", " carraige ride"];
+    let arrEntMonroe =["Target", "Woodbury Commons", "Bear Mountain Zoo", "Starbucks"];
+    let arrEntFishkill =["Playground", "Duck Pond", "Ice Cream Parlor", "Train Station"];
+    let arrEntPrinceton =[ "University Tour", "Hiking","BBQ","Playground"];
+    if (location == "Fishkill"){
+        return arrEntFishkill;
+    }
+    if (location == "Monroe"){
+        return arrEntMonroe;
+    }
+    if (location == "New York City"){
+        return arrEntNYC;
+    }
+    if (location== "Princeton"){
+        return arrEntPrinceton;
+    }
+}
+
+let yourLocationEnt = locationEntertainment(randomLocation);
+console.log (yourLocationEnt);
+
+// function genEntertainment (location){
+    
+//     for(i=0; i<location.length;i++){
+//      decIndex = Math.random()*location.length;
+//      wholeIndex = Math.floor(decIndex);   
+//     return location[wholeIndex];
+//     }
+// }
+
+// let yourEntertainment = genEntertainment()
