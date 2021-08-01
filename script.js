@@ -1,20 +1,19 @@
 "use strict";
-//array of locations 
+//array & function for location. Location chosen. 
 let arrLocations = ["Fishkill","Monroe", "New York City", "Princeton"];
 
-//make function for location 
+
 function randomizerLocation(anArray){
     let decimalNum = Math.random()* anArray.length;
     let wholeNum = Math.floor(decimalNum);
     return anArray[wholeNum];
 }
 
-//verify function for location works
+
 let randomLocation = randomizerLocation (arrLocations);
 console.log (randomLocation)
 
-
-// //I need a function to choose an array of restaurant based on each location 
+//restaurant function & array of rest. lists for each location. function called to  randomly generate restaurant. 
 function locationrestaurantoptions (theLocation){
     theLocation = randomLocation
     let arrFishkillRestaurants = ["Satano", "Jade China", "The Dutchess Biercafe"];
@@ -47,7 +46,7 @@ function randomizerRestaurant(location){
 let randomRestaurant = randomizerRestaurant (arrWhichRestList);
 console.log (randomRestaurant);
 
-//random transportation generator 
+//random transportation generator. list, function & function called.
 
 let arrTransport = ["car", "bike", "uber"]
 
@@ -61,7 +60,7 @@ let resultRandomTransportation = transportation(arrTransport);
 console.log (resultRandomTransportation);
 
 
-//Entertainment 
+//Entertainment function, location array of entertainment. function called/ent randomly chosen. 
 
 function locationEntertainment (location){
     location = randomLocation
@@ -86,13 +85,35 @@ function locationEntertainment (location){
 let yourLocationEnt = locationEntertainment(randomLocation);
 console.log (yourLocationEnt);
 
-// function genEntertainment (location){
-    
-//     for(i=0; i<location.length;i++){
-//      decIndex = Math.random()*location.length;
-//      wholeIndex = Math.floor(decIndex);   
-//     return location[wholeIndex];
-//     }
+function genEntertainment (location){
+     let decIndex = Math.random()*location.length;
+     let wholeIndex = Math.floor(decIndex);   
+    return location[wholeIndex];
+}
+
+let yourEntertainment = genEntertainment(yourLocationEnt);
+console.log (yourEntertainment);
+
+// function to print entire trip to console. 
+function tripInfo (){
+console.log ("Location:"+ randomLocation);
+console.log ("Restaurant:"+ randomRestaurant);
+console.log ("Transportation:"+ resultRandomTransportation);
+console.log ("Entertainment:"+ yourEntertainment);
+}
+
+console.log (tripInfo);
+
+//I want a function that prompts user to ask if theyre happy with their choice.
+//       if yes, function to show entire trip & console.log
+
+//I want a function to rechoose a section. 
+
+let questionChange = prompt ("Congratulations! You will be going to " + randomLocation+ " for your trip." + " You will be dining at "+ randomRestaurant+ " ."+ " You will be using "+ resultRandomTransportation+ " to get around. "+ "While in "+randomLocation+" you will be enjoying " + yourEntertainment +". Are you happy with your trip? Enter yes or no.");
+//if (questionOfChange = "yes"){
+    //print trip details to console
+// }
+// else if (questionOfChange = "no"){
+    //choose from buttons whic part they want to choose 
 // }
 
-// let yourEntertainment = genEntertainment()
