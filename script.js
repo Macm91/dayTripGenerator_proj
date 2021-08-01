@@ -35,11 +35,8 @@ function locationrestaurantoptions (theLocation){
     }
 }
 
-// //verify that the function to find the array of restaurants works
-
 let arrWhichRestList = locationrestaurantoptions (randomLocation);
 console.log (arrWhichRestList);
-
 
 function randomizerRestaurant(location){
     let decimalNum = Math.random()*location.length;
@@ -47,8 +44,24 @@ function randomizerRestaurant(location){
     return location[wholeNum];
 }
 
-
-
 let randomRestaurant = randomizerRestaurant (arrWhichRestList);
 console.log (randomRestaurant);
 
+//random transportation generator 
+
+let arrTransport = ["car", "bike", "uber"]
+
+function transportation (type){
+    let randomIndexDecimal= Math.random() * type.length;
+    let randomIndexWholeNum= Math.floor(randomIndexDecimal);
+    return type[randomIndexWholeNum];
+}
+
+let resultRandomTransportation = transportation(arrTransport);
+console.log (resultRandomTransportation);
+
+
+//Entertainment 
+
+// let arrEntNYC = ["broadway", "bar crawl", "central park", " carraige ride"];
+// let 
