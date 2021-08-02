@@ -11,7 +11,21 @@ function randomizerLocation(anArray){
 
 
 let randomLocation = randomizerLocation (arrLocations);
-console.log (randomLocation)
+console.log ("You will be visiting " + randomLocation +".")
+
+
+//random transportation generator. list, function & function called.
+
+let arrTransport = ["a car", "a bike", "uber"]
+
+function transportation (type){
+    let randomIndexDecimal= Math.random() * type.length;
+    let randomIndexWholeNum= Math.floor(randomIndexDecimal);
+    return type[randomIndexWholeNum];
+}
+
+let resultRandomTransportation = transportation(arrTransport);
+console.log ("You will be using " +resultRandomTransportation+ " for transportatiom.");
 
 //restaurant function & array of rest. lists for each location. function called to  randomly generate restaurant. 
 function locationrestaurantoptions (theLocation){
@@ -35,7 +49,7 @@ function locationrestaurantoptions (theLocation){
 }
 
 let arrWhichRestList = locationrestaurantoptions (randomLocation);
-console.log (arrWhichRestList);
+
 
 function randomizerRestaurant(location){
     let decimalNum = Math.random()*location.length;
@@ -44,30 +58,16 @@ function randomizerRestaurant(location){
 }
 
 let randomRestaurant = randomizerRestaurant (arrWhichRestList);
-console.log (randomRestaurant);
-
-//random transportation generator. list, function & function called.
-
-let arrTransport = ["car", "bike", "uber"]
-
-function transportation (type){
-    let randomIndexDecimal= Math.random() * type.length;
-    let randomIndexWholeNum= Math.floor(randomIndexDecimal);
-    return type[randomIndexWholeNum];
-}
-
-let resultRandomTransportation = transportation(arrTransport);
-console.log (resultRandomTransportation);
-
+console.log ("You will be dining at "+randomRestaurant + ".");
 
 //Entertainment function, location array of entertainment. function called/ent randomly chosen. 
 
 function locationEntertainment (location){
     location = randomLocation
-    let arrEntNYC = ["broadway", "bar crawl", "central park", " carraige ride"];
+    let arrEntNYC = ["broadway", "a bar crawl", "central park", " a carraige ride"];
     let arrEntMonroe =["Target", "Woodbury Commons", "Bear Mountain Zoo", "Starbucks"];
-    let arrEntFishkill =["Playground", "Duck Pond", "Ice Cream Parlor", "Train Station"];
-    let arrEntPrinceton =[ "University Tour", "Hiking","BBQ","Playground"];
+    let arrEntFishkill =["aPlayground", "a Duck Pond", "an Ice Cream Parlor", "a Train Station"];
+    let arrEntPrinceton =[ " a University Tour", "a Hike","go to a BBQ"," a Playground"];
     if (location == "Fishkill"){
         return arrEntFishkill;
     }
@@ -80,40 +80,52 @@ function locationEntertainment (location){
     if (location== "Princeton"){
         return arrEntPrinceton;
     }
-}
-
-let yourLocationEnt = locationEntertainment(randomLocation);
-console.log (yourLocationEnt);
+} 
+let arrLocationEnt = locationEntertainment(randomLocation);
 
 function genEntertainment (location){
      let decIndex = Math.random()*location.length;
      let wholeIndex = Math.floor(decIndex);   
     return location[wholeIndex];
 }
-
-let yourEntertainment = genEntertainment(yourLocationEnt);
-console.log (yourEntertainment);
-
-// function to print entire trip to console. 
-function tripInfo (){
-console.log ("Location:"+ randomLocation);
-console.log ("Restaurant:"+ randomRestaurant);
-console.log ("Transportation:"+ resultRandomTransportation);
-console.log ("Entertainment:"+ yourEntertainment);
+let yourEntertainment = genEntertainment(arrLocationEnt);
+console.log ("Your entertainment for the day will be "+yourEntertainment+".");
+//
+//
+//
+// function finalCheck(){
+let question = prompt ("Congratulations! You will be going to " + randomLocation+ " for your trip." + " You will be dining at "+ randomRestaurant+ " ."+ " You will be using "+ resultRandomTransportation+ " to get around. "+ "While in "+randomLocation+" you will be enjoying " + yourEntertainment +" . Are you happy with your trip? Enter yes or no.");
+let text;
+if (question == null || question == "" || question == "yes"){
+    text= alert ("Please enjoy your trip. ");
 }
+else 
+    text = prompt ("What would you like to change? Options: Location, Restaurant, Transportation, or Entertainment.");
 
-console.log (tripInfo);
-
-//I want a function that prompts user to ask if theyre happy with their choice.
-//       if yes, function to show entire trip & console.log
-
-//I want a function to rechoose a section. 
-
-let questionChange = prompt ("Congratulations! You will be going to " + randomLocation+ " for your trip." + " You will be dining at "+ randomRestaurant+ " ."+ " You will be using "+ resultRandomTransportation+ " to get around. "+ "While in "+randomLocation+" you will be enjoying " + yourEntertainment +". Are you happy with your trip? Enter yes or no.");
-//if (questionOfChange = "yes"){
-    //print trip details to console
+let response;
+    if(text == null || text == ""){
+        response = alert ("Please enjoy your trip. ")
+    }
+if (text == "location"){
+    location.reload();
+ }
+else if (text == "restaurant"){
+    let restaurant = randomizerRestaurant(arrWhichRestList);
+    randomRestaurant = restaurant;
+    console.log (randomRestaurant);
+    console.log (restaurant);
+}
+else if (text == "transportation"){
+    let newTransport = transportation(arrTransport);
+    resultRandomTransportation = newTransport;
+    console.log (resultRandomTransportation);
+}
+else if ( text == "entertainment"){
+    let newEntertainment = genEntertainment(arrLocationEnt);
+    yourEntertainment = newEntertainment;
+    console.log (yourEntertainment);
+}
 // }
-// else if (questionOfChange = "no"){
-    //choose from buttons whic part they want to choose 
-// }
 
+// let lastCheck = finalCheck();
+// console.log (lastCheck);
