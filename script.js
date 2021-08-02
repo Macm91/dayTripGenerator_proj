@@ -90,10 +90,11 @@ function genEntertainment (location){
 }
 let yourEntertainment = genEntertainment(arrLocationEnt);
 console.log ("Your entertainment for the day will be "+yourEntertainment+".");
+
 //
 //
 //
-// function finalCheck(){
+
 let question = prompt ("Congratulations! You will be going to " + randomLocation+ " for your trip." + " You will be dining at "+ randomRestaurant+ " ."+ " You will be using "+ resultRandomTransportation+ " to get around. "+ "While in "+randomLocation+" you will be enjoying " + yourEntertainment +" . Are you happy with your trip? Enter yes or no.");
 let text;
 if (question == null || question == "" || question == "yes"){
@@ -110,7 +111,7 @@ if (text == "location"){
     location.reload();
  }
 else if (text == "restaurant"){
-    let restaurant = randomizerRestaurant(arrWhichRestList);
+    let restaurant = randomizerRestaurant(randomLocation);
     randomRestaurant = restaurant;
     console.log (randomRestaurant);
     console.log (restaurant);
@@ -125,7 +126,5 @@ else if ( text == "entertainment"){
     yourEntertainment = newEntertainment;
     console.log (yourEntertainment);
 }
-// }
 
-// let lastCheck = finalCheck();
-// console.log (lastCheck);
+console.log ("Location:"+ randomLocation+ "Transportation: "+ resultRandomTransportation+ " Restaurant:" + randomRestaurant+ " Entertainment: "+ yourEntertainment);
